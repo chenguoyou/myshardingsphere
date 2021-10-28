@@ -21,6 +21,7 @@ import org.apache.shardingsphere.sharding.api.config.strategy.keygen.KeyGenerate
 import org.apache.shardingsphere.sharding.api.config.strategy.sharding.StandardShardingStrategyConfiguration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.sound.midi.Soundbank;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Collections;
@@ -41,6 +42,8 @@ import java.util.Properties;
 public class DynamicDsApp {
 
     public static void main(String[] args) throws SQLException {
+
+        System.out.println("this is a test……");
         DataSource dataSource = ShardingSphereDataSourceFactory.createDataSource(createDataSourceMap(), Collections.singleton(createShardingRuleConfiguration()), new Properties());
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
 

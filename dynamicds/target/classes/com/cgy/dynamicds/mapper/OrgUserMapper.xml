@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgy.dynamicds.mapper.OrgUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cgy.dynamicds.entity.OrgUserEntity">
+        <id column="ou_id" property="ouId" />
+        <result column="org_id" property="orgId" />
+        <result column="org_code" property="orgCode" />
+        <result column="org_name" property="orgName" />
+        <result column="user_name_cn" property="userNameCn" />
+        <result column="user_name" property="userName" />
+        <result column="dep_id" property="depId" />
+        <result column="is_usable" property="isUsable" />
+        <result column="com_id" property="comId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ou_id, org_id, org_code, org_name, user_name_cn, user_name, dep_id, is_usable, com_id
+    </sql>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from org_user
+    </select>
+</mapper>
